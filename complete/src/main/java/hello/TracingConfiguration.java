@@ -25,6 +25,7 @@ public class TracingConfiguration {
                     .withCollectorHost("collector-grpc.lightstep.com")
                     .withCollectorProtocol("https")
                     .withComponentName("MySpringApp")
+                    .withScopeManager(new CustomScopeManager("my scope manager"))
                     .build();
 
             return new JRETracer(options);
